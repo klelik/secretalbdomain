@@ -143,7 +143,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 
-const lang = ref('en')
+const lang = ref('al')
 
 const setLang = (selectedLang) => {
   lang.value = selectedLang
