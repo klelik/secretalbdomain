@@ -45,14 +45,14 @@
         <div
           class="mb-10 lg:mb-16 flex justify-center items-center flex-col gap-x-0 gap-y-6 lg:gap-y-0 lg:flex-row lg:justify-between max-md:max-w-lg max-md:mx-auto"
         >
-          <div class="relative w-full lg:text-left lg:w-2/4">
+          <div class="relative w-full lg:text-left text-center lg:w-2/4">
             <h2
               class="text-4xl font-bold text-gray-900 leading-[3.25rem] lg:mb-6 mx-auto max-w-max lg:max-w-md lg:mx-0"
             >
               {{ content[lang].benefitsTitle }}
             </h2>
           </div>
-          <div class="relative w-full lg:text-left lg:w-2/4">
+          <div class="relative w-full lg:text-left text-center lg:w-2/4">
             <p class="text-lg font-normal text-gray-500 mb-5">
               {{ content[lang].benefitsSubtitle }}
             </p>
@@ -121,15 +121,12 @@
           >
             {{ content[lang].contactButton }}
           </a>
-          <p class="text-center text-xs text-gray-400 mt-4">
-            {{ content[lang].contactNote }}
-          </p>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-100 py-8">
+    <footer class="py-9">
       <div class="container mx-auto px-6 text-center text-gray-500 text-sm">
         <p>
           &copy; {{ new Date().getFullYear() }} secretalbania.al.
