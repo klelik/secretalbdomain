@@ -143,8 +143,8 @@
 <script setup lang="ts">
 // @ts-nocheck
 import { ref, computed } from 'vue'
-
 const lang = ref('al')
+console.log('Premium Domain Portfolio for Sale')
 
 const setLang = (selectedLang) => {
   lang.value = selectedLang
