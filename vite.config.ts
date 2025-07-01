@@ -9,7 +9,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [vue(), vueJsx(), vueDevTools(), tailwindcss()],
 
-  base: '/secretalbdomain/',
+  base: '/',
 
   resolve: {
     alias: {
