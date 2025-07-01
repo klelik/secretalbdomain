@@ -140,7 +140,8 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+// @ts-nocheck
 import { ref, computed } from 'vue'
 
 const lang = ref('al')
