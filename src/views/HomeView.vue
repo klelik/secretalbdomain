@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="bg-gray-100 py-2">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center gap-4">
         <div class="on-sale-badge">{{ content[lang].saleBadge }}</div>
         <div class="flex items-center">
           <button
@@ -102,17 +102,16 @@
       </div>
     </section>
 
-    <section
-      id="contact"
-      class="py-24 bg-gray-50 hero"
-      :style="{ '--hero-image-url': `url(${heroImageUrl})` }"
-    >
+    <section id="contact" class="py-24 bg-gray-50">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-gray-900 text-center mb-6">
           {{ content[lang].contactTitle }}
         </h2>
-        <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8 text-center">
-          <p class="text-gray-600 mb-8">
+        <div
+          class="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8 text-center hero"
+          :style="{ '--hero-image-url': `url(${heroImageUrl})` }"
+        >
+          <p class="text-white mb-8">
             {{ content[lang].contactSubtitle }}
           </p>
           <a
@@ -237,7 +236,7 @@ const content = {
         icon: icons.asset,
       },
     ],
-    contactTitle: 'Të interesuar për të blerë këtë Portofol?',
+    contactTitle: 'Të interesuar për të blerë këtë Domain?',
     contactSubtitle:
       'Procesi ynë i blerjes trajtohet me profesionalizmin dhe konfidencialitetin më të lartë. Na kontaktoni për të marrë informacion të detajuar ose për të filluar një diskutim.',
     contactButton: 'Bëni një Kërkesë Konfidenciale',
@@ -255,9 +254,9 @@ const mailtoLink = computed(() => {
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .on-sale-badge {
-  background-color: #4f46e5;
+  background-color: #d7263d;
   color: white;
   padding: 5px 15px;
   font-size: 0.8rem;
@@ -266,8 +265,21 @@ const mailtoLink = computed(() => {
 }
 
 .hero {
-  background-image: var(--hero-image-url);
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), var(--hero-image-url);
   background-size: cover;
   background-position: center;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 10;
 }
 </style>
