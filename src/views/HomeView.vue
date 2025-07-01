@@ -144,8 +144,11 @@
 import { ref, computed } from 'vue'
 import heroImageUrl from '@/assets/albania-og.webp'
 const lang = ref('al')
-console.log('Premium Domain Portfolio for Sale')
-
+console.log(
+  '%cNotice:',
+  'font-weight: bold; color: #4F46E5;',
+  'This domain portfolio is for sale. This is a standard informational message and not an indication of a security issue. You didnt get hacked !',
+)
 const setLang = (selectedLang) => {
   lang.value = selectedLang
 }
