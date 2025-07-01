@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- Language Switcher & Sale Badge -->
     <div class="bg-gray-100 py-2">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <div class="on-sale-badge">{{ content[lang].saleBadge }}</div>
@@ -27,7 +26,6 @@
       </div>
     </div>
 
-    <!-- Hero Section -->
     <section class="py-16 bg-gray-50">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-4">secretalbania.al</h1>
@@ -39,7 +37,6 @@
       </div>
     </section>
 
-    <!-- Benefits Section -->
     <section class="py-24">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
@@ -84,7 +81,7 @@
           <div
             v-for="benefit in content[lang].benefits"
             :key="benefit.title"
-            class="group relative w-full bg-gray-100 rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-64 xl:p-7 xl:w-1/4 hover:bg-indigo-600"
+            class="group relative w-full bg-gray-100 rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-96 xl:p-7 xl:w-1/4 hover:bg-indigo-600"
           >
             <div
               class="bg-white rounded-full flex justify-center items-center mb-5 w-14 h-14"
@@ -105,8 +102,11 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-gray-50">
+    <section
+      id="contact"
+      class="py-24 bg-gray-50 hero"
+      :style="{ '--hero-image-url': `url(${heroImageUrl})` }"
+    >
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-gray-900 text-center mb-6">
           {{ content[lang].contactTitle }}
@@ -125,7 +125,6 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-9">
       <div class="container mx-auto px-6 text-center text-gray-500 text-sm">
         <p>
@@ -133,7 +132,7 @@
           {{ content[lang].footerConfidential }}
         </p>
         <p class="mt-4 text-xs text-gray-600 max-w-3xl mx-auto">
-          {{ content[lang].footerLegal }}
+          **{{ content[lang].footerLegal }}**
         </p>
       </div>
     </footer>
@@ -143,6 +142,7 @@
 <script setup lang="ts">
 // @ts-nocheck
 import { ref, computed } from 'vue'
+import heroImageUrl from '@/assets/albania-og.webp'
 const lang = ref('al')
 console.log('Premium Domain Portfolio for Sale')
 
@@ -163,90 +163,93 @@ const icons = {
 
 const content = {
   en: {
-    saleBadge: 'Premium Domain Name for Sale',
-    portfolioIntro: 'A Premium Domain Portfolio including',
-    benefitsTitle: 'Benefits of owning secretalbania.al',
+    saleBadge: 'Exclusive Domain Portfolio for Sale',
+    portfolioIntro: 'Secure the definitive online brand for exclusive Albanian experiences:',
+    benefitsTitle: 'A Strategic Digital Asset',
     benefitsSubtitle:
-      "Establish your brand's authoritative presence in Albania with this premium domain that distinguishes you from competitors.",
-    offerLink: 'Make an Offer',
+      "The 'Secret [Location]' naming convention is a proven, successful model for high-value tourism. This portfolio provides a premium domain to build a powerful, independent brand for Albania based on this popular narrative.",
+    offerLink: 'Enquire About Acquisition',
     benefits: [
       {
-        title: 'Authoritative',
-        description: 'Build trust with customers and investors with a premium .al domain name.',
-        icon: icons.authoritative,
-      },
-      {
-        title: 'Memorable & Unmistakable',
+        title: 'Proven Brand Concept',
         description:
-          'Easy to remember domain with professional email addresses like info@secretalbania.al.',
+          "Leverage the success of the 'Secret' travel guide phenomenon. This name instantly conveys exclusivity and insider knowledge, attracting a premium audience.",
         icon: icons.memorable,
       },
       {
-        title: 'Reputation & Prestige',
-        description: 'Own the Albanian market space and distinguish yourself from competitors.',
+        title: 'Capture the High-Intent Niche',
+        description:
+          "While search volume for 'Secret Albania' is niche, user intent is exceptionally high. Capture motivated travelers actively seeking unique opportunities, not just casual traffic.",
         icon: icons.reputation,
       },
       {
-        title: 'Valuable Asset',
-        description: 'Classified as an intangible asset that increases advertising effectiveness.',
+        title: 'Authoritative & Clean History',
+        description:
+          'This domain has no prior history, offering a clean slate for SEO. The .al TLD establishes immediate authority and trust within the Albanian market.',
+        icon: icons.authoritative,
+      },
+      {
+        title: 'Valuable Asset & Brand Security',
+        description:
+          "Acquire the complete portfolio (.al, .com) to protect your future brand from imitators and secure a valuable digital asset that will appreciate as Albania's tourism market grows.",
         icon: icons.asset,
       },
     ],
-    contactTitle: 'Interested in This Domain Portfolio?',
+    contactTitle: 'Interested in Acquiring This Portfolio?',
     contactSubtitle:
-      'All inquiries are handled with strict confidentiality. To make an offer or for more information, please contact us directly.',
-    contactButton: 'Make a Confidential Offer',
-    contactNote: 'This will open your default email application.',
-    emailSubject: 'Inquiry Regarding the secretalbania.al Domain Portfolio',
+      'Our acquisition process is handled with the utmost professionalism and confidentiality. Contact us to receive detailed information or to initiate a discussion.',
+    contactButton: 'Make a Confidential Enquiry',
+    emailSubject: 'Confidential Enquiry Regarding the secretalbania.al Portfolio',
     footerConfidential: 'All inquiries are confidential.',
     footerLegal:
-      "The domain name 'secretalbania.al' and its associated portfolio are registered digital assets. This sale is for the domain names only and does not imply any affiliation with, or rights to, any existing trademarks of the same or similar name.",
+      "DISCLAIMER: This sale is for the domain name portfolio (`secretalbania.al`, `mysecretalbania.al`, `mysecretalbania.com`) only. The 'Secret Albania' brand concept is referenced for marketing and illustrative purposes, inspired by successful travel guide brands. This sale does not include, and makes no claim to, any trademark, brand affiliation, or business assets associated with any other existing 'Secret' branded entities. The buyer acquires the digital assets to develop their own independent brand.",
   },
   al: {
-    saleBadge: 'Domain Premium në Shitje',
-    portfolioIntro: 'Një Portofol Domenesh Premium që përfshin',
-    benefitsTitle: 'Përfitimet e zotërimit të secretalbania.al',
+    saleBadge: 'Portofol Ekskluziv Domenesh në Shitje',
+    portfolioIntro: 'Siguroni markën përfundimtare online për përvoja ekskluzive shqiptare:',
+    benefitsTitle: 'Një Aset Strategjik Dixhital',
     benefitsSubtitle:
-      'Vendosni praninë autoritative të markës suaj në Shqipëri me këtë domain premium që ju dallon nga konkurrentët.',
-    offerLink: 'Bëni një Ofertë',
+      "Konvencioni i emërtimit 'Secret [Vendndodhja]' është një model i provuar dhe i suksesshëm për turizmin me vlerë të lartë. Ky portofol ofron një domain premium për të ndërtuar një markë të fuqishme e të pavarur për Shqipërinë, bazuar në këtë narrativë popullore.",
+    offerLink: 'Informohuni për Blerjen',
     benefits: [
       {
-        title: 'Autoritativ',
-        description: 'Ndërtoni besim me klientët dhe investitorët me një emër domeni premium .al.',
-        icon: icons.authoritative,
-      },
-      {
-        title: 'I paharrueshëm & i Pagabueshëm',
+        title: 'Koncept Marke i Provuar',
         description:
-          "Domain i lehtë për t'u mbajtur mend me adresa emaili profesionale si info@secretalbania.al.",
+          "Përfitoni nga suksesi i fenomenit të guidave turistike 'Secret'. Ky emër përcjell menjëherë ekskluzivitet dhe njohuri të brendshme, duke tërhequr një audiencë premium.",
         icon: icons.memorable,
       },
       {
-        title: 'Reputacion & Prestigj',
-        description: 'Zotëroni hapësirën e tregut shqiptar dhe dallohuni nga konkurrentët.',
+        title: 'Kapni Tregun Niche me Synim të Lartë',
+        description:
+          "Ndonëse vëllimi i kërkimit për 'Secret Albania' është niche, synimi i përdoruesit është jashtëzakonisht i lartë. Kapni udhëtarë të motivuar që kërkojnë aktivisht mundësi unike, jo thjesht trafik të rastësishëm.",
         icon: icons.reputation,
       },
       {
-        title: 'Pasuri me Vlerë',
-        description: 'Klasifikuar si një pasuri jomateriale që rrit efektivitetin e reklamimit.',
+        title: 'Autoritativ & Histori e Pastër',
+        description:
+          'Ky domain nuk ka asnjë histori të mëparshme, duke ofruar një fillim të pastër për SEO. Prapashtesa .al krijon autoritet dhe besim të menjëhershëm në tregun shqiptar.',
+        icon: icons.authoritative,
+      },
+      {
+        title: 'Aset me Vlerë & Siguri Marke',
+        description:
+          'Blini portofolin e plotë (.al, .com) për të mbrojtur markën tuaj të ardhshme nga imituesit dhe për të siguruar një aset të vlefshëm dixhital që do të vlerësohet ndërsa tregu i turizmit në Shqipëri rritet.',
         icon: icons.asset,
       },
     ],
-    contactTitle: 'Jeni të interesuar për këtë Portofol Domenesh?',
+    contactTitle: 'Të interesuar për të blerë këtë Portofol?',
     contactSubtitle:
-      'Të gjitha kërkesat trajtohen me konfidencialitet të rreptë. Për të bërë një ofertë ose për më shumë informacion, ju lutemi na kontaktoni direkt.',
-    contactButton: 'Bëni një Ofertë Konfidenciale',
-    contactNote: 'Kjo do të hapë aplikacionin tuaj të parazgjedhur të emailit.',
-    emailSubject: 'Kërkesë në lidhje me Portofolin e Domain-it secretalbania.al',
+      'Procesi ynë i blerjes trajtohet me profesionalizmin dhe konfidencialitetin më të lartë. Na kontaktoni për të marrë informacion të detajuar ose për të filluar një diskutim.',
+    contactButton: 'Bëni një Kërkesë Konfidenciale',
+    emailSubject: 'Kërkesë Konfidenciale Lidhur me Portofolin secretalbania.al',
     footerConfidential: 'Të gjitha kërkesat janë konfidenciale.',
     footerLegal:
-      "Emri i domain-it 'secretalbania.al' dhe portofoli i tij i lidhur janë pasuri dixhitale të regjistruara. Kjo shitje është vetëm për emrat e domain-eve dhe nuk nënkupton asnjë lidhje me, ose të drejta ndaj, ndonjë marke tregtare ekzistuese me emër të njëjtë ose të ngjashëm.",
+      "SHËNIM I RËNDËSISHËM: Kjo shitje është vetëm për portofolin e emrave të domain-eve (`secretalbania.al`, `mysecretalbania.al`, `mysecretalbania.com`). Koncepti i markës 'Secret Albania' përmendet për qëllime marketingu dhe ilustruese, i frymëzuar nga markat e suksesshme të guidave turistike. Kjo shitje nuk përfshin, dhe nuk pretendon asnjë të drejtë mbi, asnjë markë tregtare, lidhje marke, ose asete biznesi të lidhura me ndonjë entitet tjetër ekzistues të markës 'Secret Albania'. Blerësi fiton asetet dixhitale për të zhvilluar markën e tij të pavarur.",
   },
 }
 
 const mailtoLink = computed(() => {
   const email = 'purchase@secretalbania.al'
-  // FIX: Access `content` directly, not `content.value`
   const subject = content[lang.value].emailSubject
   return `mailto:${email}?subject=${encodeURIComponent(subject)}`
 })
@@ -260,5 +263,11 @@ const mailtoLink = computed(() => {
   font-size: 0.8rem;
   font-weight: bold;
   border-radius: 0.375rem;
+}
+
+.hero {
+  background-image: var(--hero-image-url);
+  background-size: cover;
+  background-position: center;
 }
 </style>
