@@ -81,19 +81,20 @@
           <div
             v-for="benefit in content[lang].benefits"
             :key="benefit.title"
-            class="group relative w-full bg-gray-100 rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-96 xl:p-7 xl:w-1/4 hover:bg-indigo-600"
+            tabindex="0"
+            class="group relative w-full bg-gray-100 rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-96 xl:p-7 xl:w-1/4 hover:bg-indigo-600 focus:bg-indigo-600 active:bg-indigo-700"
           >
             <div
               class="bg-white rounded-full flex justify-center items-center mb-5 w-14 h-14"
               v-html="benefit.icon"
             ></div>
             <h4
-              class="text-xl font-semibold text-gray-900 mb-3 capitalize transition-all duration-500 group-hover:text-white"
+              class="text-xl font-semibold text-gray-900 mb-3 capitalize transition-all duration-500 group-hover:text-white group-focus:text-white"
             >
               {{ benefit.title }}
             </h4>
             <p
-              class="text-sm font-normal text-gray-500 transition-all duration-500 leading-5 group-hover:text-white"
+              class="text-sm font-normal text-gray-500 transition-all duration-500 leading-5 group-hover:text-white group-active:text-white group-focus:text-white"
             >
               {{ benefit.description }}
             </p>
