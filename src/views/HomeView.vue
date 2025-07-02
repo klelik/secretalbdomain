@@ -143,7 +143,7 @@
 
 <script setup lang="ts">
 // @ts-nocheck
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import heroImageUrl from '@/assets/albania-og.webp'
 const lang = ref('al')
 
