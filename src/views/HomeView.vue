@@ -146,6 +146,16 @@
 import { ref, computed } from 'vue'
 import heroImageUrl from '@/assets/albania-og.webp'
 const lang = ref('al')
+
+const pushDataLayer = (event: string, data: any = {}) => {
+  if (window.dataLayer) {
+    window.dataLayer.push({
+      event,
+      ...data,
+    })
+  }
+}
+
 console.log(
   '%cNotice:',
   'font-weight: bold; color: #4F46E5;',
@@ -257,6 +267,15 @@ const mailtoLink = computed(() => {
   const email = 'purchase@secretalbania.al'
   const subject = content[lang.value].emailSubject
   return `mailto:${email}?subject=${encodeURIComponent(subject)}`
+})
+
+onMounted(() => {
+  pushDataLayer('page_view', {
+    page_title: 'SecretAlbania.al - Premium Domain Portfolio',
+    page_location: window.location.href,
+    page_path: window.location.pathname,
+    language: lang.value,
+  })
 })
 </script>
 
