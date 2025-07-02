@@ -17,4 +17,10 @@ const router = createRouter({
   ],
 })
 
+// and redirect to home
+router.onError((error) => {
+  console.error('Navigation error:', error)
+  router.push('/')
+})
+
 export default router
