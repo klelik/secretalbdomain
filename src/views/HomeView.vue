@@ -31,13 +31,14 @@ function sendOffer() {
   const body = [
     `Name: ${name.value.trim()}`,
     `Email: ${buyerEmail.value.trim()}`,
-    `Offer: ${offer.value ? `${offer.value} ${currency.value}` : 'To discuss'}`,
+    `Total offer for all three domains: ${offer.value ? `${offer.value} ${currency.value}` : 'To discuss'}`,
     '',
     message.value.trim(),
     '',
-    'Interested in: secretalbania.al',
+    'Bundle: secretalbania.al, mysecretalbania.al, mysecretalbania.com',
+    'All three domains are sold together for one total price.',
   ].join('\n')
-  window.location.href = `mailto:${email}?subject=${encodeURIComponent('Domain offer — secretalbania.al')}&body=${encodeURIComponent(body)}`
+  window.location.href = `mailto:${email}?subject=${encodeURIComponent('Three-domain bundle offer — secretalbania.al')}&body=${encodeURIComponent(body)}`
   emailOpened.value = true
   track('offer_email_opened')
 }
@@ -64,12 +65,7 @@ onMounted(() => {
   <div class="sale-page">
     <header class="site-header wrap">
       <a class="site-name" href="/" aria-label="Secret Albania home">
-        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <rect width="32" height="32" rx="7" fill="currentColor" />
-          <circle cx="16" cy="16" r="9" stroke="white" stroke-width="1.5" />
-          <ellipse cx="16" cy="16" rx="4" ry="9" stroke="white" stroke-width="1.5" />
-          <path d="M7 16h18" stroke="white" stroke-width="1.5" />
-        </svg>
+        <img src="/albanian-eagle.svg" alt="" width="36" height="36" aria-hidden="true" />
         secretalbania.al
       </a>
       <div class="language-switch" role="group" :aria-label="c.language">
@@ -92,7 +88,10 @@ onMounted(() => {
         >
         <div class="also-available">
           <p>{{ c.alsoAvailable }}</p>
-          <div><span>mysecretalbania.al</span><span>mysecretalbania.com</span></div>
+          <div>
+            <span>secretalbania.al</span><span>mysecretalbania.al</span
+            ><span>mysecretalbania.com</span>
+          </div>
           <p class="portfolio-note">{{ c.portfolioNote }}</p>
         </div>
         <div class="direct-contact">

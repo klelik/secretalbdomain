@@ -102,9 +102,10 @@ button:focus-visible {
   font-weight: 650;
   letter-spacing: -0.4px;
 }
-.site-name svg {
-  width: 30px;
-  height: 30px;
+.site-name img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
   color: var(--red);
 }
 .language-switch {
@@ -446,9 +447,9 @@ button:focus-visible {
   .site-name {
     font-size: 14px;
   }
-  .site-name svg {
-    width: 27px;
-    height: 27px;
+  .site-name img {
+    width: 32px;
+    height: 32px;
   }
   .sale-main {
     grid-template-columns: 1fr;

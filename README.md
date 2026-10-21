@@ -1,6 +1,8 @@
 # secretalbania.al
 
-A single-page domain sale website. Vue 3 and Vite; hosted on GitHub Pages.
+A single-page domain sale website. The three domains are sold together as one
+bundle for one total price; offers are for the complete bundle. Vue 3 and Vite;
+hosted on GitHub Pages.
 
 ## Development
 
@@ -14,6 +16,10 @@ npm run dev
 Copy and translations live in `src/content.ts`. The enquiry address is in
 `src/views/HomeView.vue`. The form prepares a mailto draft; it does not submit
 to a backend or send mail automatically.
+
+The red eagle logo is adapted from the public-domain
+[Flag of Albania SVG on Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Flag_of_Albania.svg).
+The flag background was removed and the eagle recoloured for this page.
 
 ## Production
 
