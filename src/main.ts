@@ -1,11 +1,8 @@
 import './assets/main.css'
 
-import { createApp } from 'vue'
+import { createApp, createSSRApp } from 'vue'
 import App from './App.vue'
-import router from './router'
 
-const app = createApp(App)
-
-app.use(router)
+const app = document.querySelector('#app')?.hasChildNodes() ? createSSRApp(App) : createApp(App)
 
 app.mount('#app')

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="white"/>
+  <rect width="1200" height="12" fill="#d52632"/>
+  <circle cx="86" cy="122" r="7" fill="#d52632"/>
+  <text x="108" y="129" fill="#d52632" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="600" letter-spacing="3">DOMAIN FOR SALE</text>
+  <text x="78" y="305" fill="#202024" font-family="Helvetica,Arial,sans-serif" font-size="110" font-weight="700" letter-spacing="-6">secretalbania<tspan fill="#d52632">.al</tspan></text>
+  <text x="82" y="375" fill="#707076" font-family="Helvetica,Arial,sans-serif" font-size="30">A strong name. Your next opportunity.</text>
+  <rect x="82" y="446" width="300" height="66" rx="5" fill="#d52632"/>
+  <text x="110" y="488" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="23" font-weight="600">Private offers welcome</text>
+  <line x1="82" y1="558" x2="1118" y2="558" stroke="#e9e9ec"/>
+  <text x="82" y="596" fill="#929298" font-family="Helvetica,Arial,sans-serif" font-size="18">purchase@secretalbania.al</text>
+</svg>

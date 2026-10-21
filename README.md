@@ -1,39 +1,55 @@
-# secretalbania
+# secretalbania.al
 
-This template should help get you started developing with Vue 3 in Vite.
+A single-page domain sale website. Vue 3 and Vite; hosted on GitHub Pages.
 
-## Recommended IDE Setup
+## Development
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+Use Node 22.12+ (or a newer supported LTS).
 
 ```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
+npm ci
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+Copy and translations live in `src/content.ts`. The enquiry address is in
+`src/views/HomeView.vue`. The form prepares a mailto draft; it does not submit
+to a backend or send mail automatically.
+
+## Production
 
 ```sh
 npm run build
+npm run preview
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+The build type-checks, builds the client, then renders the homepage into
+`dist/index.html`. Page text, links and the form are available in the original
+HTML without running JavaScript. Vue hydrates that content for the language
+switch and enquiry draft. Do not deploy a plain `vite build` output; use the
+project build command so prerendering runs.
 
-```sh
-npm run lint
-```
+Pushes to `main` deploy through `.github/workflows/deploy.yml`.
+`public/CNAME` preserves the custom domain in the build output.
+
+## Search indexing
+
+- One canonical page: `https://secretalbania.al/`.
+- `public/robots.txt` allows crawling and points to the single-URL sitemap.
+- `public/sitemap.xml` includes only the homepage.
+- Title, description, canonical, index directive, WebPage JSON-LD and social
+  metadata are in the initial HTML.
+- The language switch changes the same homepage. Its query variant uses the
+  same canonical; no extra language pages or hreflang targets are advertised.
+- The share image is `public/domain-og.png`; its editable source is the SVG
+  beside it.
+
+After deployment, use the owner's Google Search Console account for the
+`secretalbania.al` property. Submit `https://secretalbania.al/sitemap.xml`,
+inspect `https://secretalbania.al/`, run the live test, then request indexing.
+An existing Google site-verification TXT record is present in DNS; do not
+replace it without checking the account that owns the property. Search
+Console access is needed to identify the exact reason for exclusion.
+
+GitHub Pages HTTPS enforcement was enabled during this update. Verify that
+HTTP redirects to HTTPS after edge caches refresh. Search engines decide
+whether and when to index; these changes do not guarantee inclusion.
