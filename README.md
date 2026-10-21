@@ -37,6 +37,13 @@ project build command so prerendering runs.
 Pushes to `main` deploy through `.github/workflows/deploy.yml`.
 `public/CNAME` preserves the custom domain in the build output.
 
+Unknown paths use `public/404.html` to immediately redirect visitors to the
+homepage, preserving query parameters and the fragment. A meta refresh and
+homepage link provide fallbacks when JavaScript is unavailable. GitHub Pages
+still responds with HTTP 404 for a missing path before the browser navigates
+home; this is a browser redirect, not a server-side 301. The app also normalizes
+non-root paths to `/` when served by a development or SPA fallback server.
+
 ## Search indexing
 
 - One canonical page: `https://secretalbania.al/`.
